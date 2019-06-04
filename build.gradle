@@ -1,0 +1,69 @@
+buildscript {
+    repositories {
+        jcenter()
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.2.0'
+        classpath 'com.google.gms:google-services:4.0.2'
+    }
+}
+apply plugin: 'com.android.application'
+
+repositories {
+    mavenCentral()
+    google()
+    jcenter()
+}
+
+dependencies {
+    def work_version = "1.0.0-alpha08"
+
+    api 'com.android.support:support-v4:27.1.1'
+    api 'de.cketti.library.changelog:ckchangelog:1.2.2'
+    implementation 'com.google.firebase:firebase-core:16.0.3'
+    implementation 'com.google.firebase:firebase-iid:17.0.0'
+    implementation 'com.google.firebase:firebase-messaging:17.3.0'
+    implementation files('AdobeMobileLibrary/adobeMobileLibrary-4.16.1.jar')
+    implementation files('neolane_sdk-1.0.27-debug.aar')
+    implementation "android.arch.work:work-runtime:$work_version"
+
+    // optional - Firebase JobDispatcher support
+    implementation "android.arch.work:work-firebase:$work_version"
+}
+
+android {
+    compileSdkVersion 28
+    buildToolsVersion '28.0.2'
+
+    sourceSets {
+        main {
+            manifest.srcFile 'AndroidManifest.xml'
+            java.srcDirs = ['src']
+            resources.srcDirs = ['src']
+            aidl.srcDirs = ['src']
+            renderscript.srcDirs = ['src']
+            res.srcDirs = ['res']
+            assets.srcDirs = ['assets']
+        }
+
+        // Move the tests to tests/java, tests/res, etc...
+        //instrumentTest.setRoot('tests')
+
+        // Move the build types to build-types/<type>
+        // For instance, build-types/debug/java, build-types/debug/AndroidManifest.xml, ...
+        // This moves them out of them default location under src/<type>/... which would
+        // conflict with src/ being used by the main source set.
+        // Adding new build types or product flavors should be accompanied
+        // by a similar customization.
+        debug.setRoot('build-types/debug')
+        release.setRoot('build-types/release')
+    }
+    defaultConfig {
+        minSdkVersion 23
+        targetSdkVersion 28
+    }
+}
+
+apply plugin: 'com.google.gms.google-services'

@@ -16,7 +16,7 @@ Code based on https://github.com/uberspot/2048-android, which is the android por
 
 1. Follow first three lines of Building directions.
 2. In Android Studio 3.4.1 select File > Open... and select acs-android-example directory.
-3. Run > Run 'acs-android-example/'
+3. Run > Run 'acs-android-example'
 
 ## License
 

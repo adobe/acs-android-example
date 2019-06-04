@@ -1,0 +1,129 @@
+{
+  "lastModified": "2018-08-17T17:40:19.302Z",
+  "marketingCloud": {
+    "org": "<ORGID_GOES_HERE>"
+  },
+  "analytics": {
+    "rsids": "",
+    "server": "",
+    "ssl": false,
+    "offlineEnabled": true,
+    "charset": "UTF-8",
+    "lifecycleTimeout": 300,
+    "privacyDefault": "optedin",
+    "batchLimit": 0,
+    "timezone": "PDT",
+    "timezoneOffset": -420,
+    "referrerTimeout": 0,
+    "backdateSessionInfo": false,
+    "poi": [
+      [
+        "Adobe",
+        37.33091,
+        -121.89352,
+        100
+      ]
+    ]
+  },
+  "messages": [
+
+    {
+      "messageId": "primaryCollectPII",
+      "payload": {
+        "templateurl": "<Rest of URL obtained from properties in ACS SDK v4 app>/subscriptions/{%mcid%}",
+        "templatebody": "ewoicHVzaFBsYXRmb3JtIjoiZ2NtIiwKIm1hcmtldGluZ0Nsb3VkSWQiOiJ7JW1jaWQlfSIsCiJ1c2VyS2V5IjogInt1c2VyS2V5fSIsCiJjdXNFbWFpbCI6IntlbWFpbH0iLAoiY3VzRmlyc3ROYW1lIjoie2ZpcnN0TmFtZX0iLAoiY3VzTGFzdE5hbWUiOiJ7bGFzdE5hbWV9Igp9",
+        "contenttype": "application/json",
+        "timeout": 2
+      },
+      "showOffline": true,
+      "showRule": "always",
+      "endDate": 2524730400,
+      "startDate": 0,
+      "template": "pii",
+      "audiences": [],
+      "triggers": [
+        {
+          "key": "triggerKey",
+          "matches": "eq",
+          "values": [
+            "collectPII"
+          ]
+        }
+      ]
+    },
+
+    {
+      "messageId": "<Should be generated automatically when you download ADBMobileConfig.json>",
+      "recipient": "Custom",
+      "payload": {
+        "templateurl": "<Rest of URL obtained from properties in ACS SDK v4 app>/subscriptions/{%mcid%}",
+        "templatebody": "eyANCiAgICJwdXNoUGxhdGZvcm0iOiAiZ2NtIiwNCiAgICJtYXJrZXRpbmdDbG91ZElkIjogInslbWNpZCV9Ig0KfQ0K",
+        "contenttype": "application/json",
+        "timeout": 2
+      },
+      "showOffline": true,
+      "showRule": "always",
+      "endDate": 2524730400,
+      "startDate": 0,
+      "template": "callback",
+      "audiences": [],
+      "triggers": [
+        {
+          "key": "a.LaunchEvent",
+          "matches": "nx",
+          "values": null
+        }
+      ]
+    },
+
+
+    {
+      "messageId": "<Should be generated automatically when you download ADBMobileConfig.json>",
+      "recipient": "Custom",
+      "payload": {
+        "templateurl": "<Rest of URL obtained from properties in ACS SDK v4 app>/r/?id={broadlogId},{deliveryId},{action}",
+        "templatebody": "",
+        "contenttype": "",
+        "timeout": 2
+      },
+      "showOffline": true,
+      "showRule": "always",
+      "endDate": 2524730400,
+      "startDate": 0,
+      "template": "callback",
+      "audiences": [],
+      "triggers": [
+        {
+          "key": "pev2",
+          "matches": "eq",
+          "values": [
+            "AMACTION:tracking"
+          ]
+        }
+      ]
+    },
+    {
+      "messageId": "<Should be generated automatically when you download ADBMobileConfig.json>",
+      "payload": {
+        "templateurl": "<Rest of URL obtained from properties in ACS SDK v4 app>/subscriptions/{%mcid%}",
+        "templatebody": "ew0KICAibG9jYXRpb25EYXRhIjp7DQogICAgICJkaXN0YW5jZXMiOiJ7YS5sb2MuZGlzdH0iLA0KICAgICAicG9pTGFiZWwiOiJBZG9iZSIsDQogICAgICJsYXRpdHVkZS5hIjoie2EubG9jLmxhdC5hfSIsDQogICAgICJsYXRpdHVkZS5iIjoie2EubG9jLmxhdC5ifSIsDQogICAgICJsYXRpdHVkZS5jIjoie2EubG9jLmxhdC5jfSIsDQogICAgICJsb25naXR1ZGUuYSI6InthLmxvYy5sb24uYX0iLA0KICAgICAibG9uZ2l0dWRlLmIiOiJ7YS5sb2MubG9uLmJ9IiwNCiAgICAgImxvbmdpdHVkZS5jIjoie2EubG9jLmxvbi5jfSIsDQogICAgICJhcHBJZCI6InthLmFwcGlkfSIsDQogICAgICJtYXJrZXRpbmdDbG91ZElkIjogInttaWR9Ig0KICB9DQp9",
+        "contenttype": "application/json",
+        "timeout": 2
+      },
+      "showOffline": true,
+      "showRule": "always",
+      "endDate": 2524730400,
+      "startDate": 0,
+      "template": "callback",
+      "audiences": [],
+      "triggers": [
+        {
+          "key": "campaign.test",
+          "matches": "ex",
+          "values": null
+        }
+      ]
+    }
+
+  ]
+}
