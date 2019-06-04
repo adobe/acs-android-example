@@ -1,4 +1,4 @@
-ACS Android Example
+ACS Android Example with Adobe Mobile SDK v4
 ============
 
 Code based on https://github.com/uberspot/2048-android, which is the android port of the 2048 game made by Gabriele Cirulli https://github.com/gabrielecirulli/2048.
